@@ -59,5 +59,5 @@ if((count($completed) >= intval($_ENV['CHECK_COUNTER'])) && (count(array_filter(
     file_get_contents($_ENV['AUTOMATION_PLATFORM']);
 
     $trash = $store->deleteBy([ "createdAt", "BETWEEN", [ $time_window->getTimestamp(), $actual_time->getTimestamp() ] ], Query::DELETE_RETURN_RESULTS);
-    $log->info("DELETED: ",$trash);
+    $log->info("DELETED: " . json_encode($trash));
 }
