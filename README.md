@@ -1,4 +1,4 @@
-# Unifi-Lights-Switch 💡
+# Unifi-Lights-Switch 💡 [![](https://img.shields.io/badge/Check_on-DockerHub-blue)](https://hub.docker.com/repository/docker/pr0way/unifi-automation/)
 This project was initially intended only for in-house use, so please keep in mind that it is not professionally made or well-designed.
 It's just a hobby project. If you wonder why some things work the way they do - please check out [background](https://github.com/pr0way/Unifi-Lights-Switch/wiki/Background) of that project.
 
@@ -9,7 +9,7 @@ All necessary files can be found above.
 
 1. Create a new directory and put **docker-compose.yml** in place. 
 2. Copy the sample **.env.example** file, rename it to **.env** and fill in all variables to match your environment.
-3. Run `docker compose up -d`
+3. Run `docker-compose up -d` / `docker compose up -d` 
 
 ## Building your own Docker image 🚧
 For a more detailed guide go [here](https://github.com/pr0way/Unifi-Lights-Switch/wiki/Building-your-own-Docker-image).
