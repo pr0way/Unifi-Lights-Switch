@@ -9,6 +9,10 @@ use Monolog\Handler\StreamHandler;
 
 require_once 'vendor/autoload.php';
 
+# Load configuration
+$dotenv = Dotenv::createMutable(__DIR__);
+$dotenv->safeLoad();
+
 // Set-up logs
 $log = new Logger(basename(__FILE__, '.php'));
 if (filter_var($_ENV['DEBUG_MODE'], FILTER_VALIDATE_BOOLEAN)){
@@ -16,10 +20,6 @@ if (filter_var($_ENV['DEBUG_MODE'], FILTER_VALIDATE_BOOLEAN)){
 } else {
     $log->pushHandler(new StreamHandler('php://stdout', Level::Error));
 }
-
-# Load configuration
-$dotenv = Dotenv::createMutable(__DIR__);
-$dotenv->safeLoad();
 
 # Set timezone
 date_default_timezone_set($_ENV['DEFAULT_TIMEZONE']);
