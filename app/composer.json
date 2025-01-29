@@ -1,0 +1,23 @@
+{
+    "name": "pr0way/unifi-lights-switch",
+    "description": "Simple PHP script to check if anybody is in home.",
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "art-of-wifi/unifi-api-client": "^1.1",
+        "rakibtg/sleekdb": "^2.15",
+        "crunzphp/crunz": "^3.7",
+        "monolog/monolog": "^3.8"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Uniapp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tomasz Pocztowski",
+            "email": "17937613+pr0way@users.noreply.github.com"
+        }
+    ]
+}

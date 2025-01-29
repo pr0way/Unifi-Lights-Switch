@@ -1,0 +1,5 @@
+services:
+  unifi:
+    image: pr0way/unifi-automation
+    container_name: unifi-automation
+    env_file: ".env"
