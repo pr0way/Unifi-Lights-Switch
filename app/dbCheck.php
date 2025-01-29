@@ -56,7 +56,11 @@ foreach($dbClients as $entry){
 
 if((count($completed) >= intval($_ENV['CHECK_COUNTER'])) && (count(array_filter($completed)) == count($completed))){
     $log->info('Turn off the lights');
-    file_get_contents($_ENV['AUTOMATION_PLATFORM']);
+    try {
+        file_get_contents($_ENV['AUTOMATION_PLATFORM']);
+    } catch (Exception $e) {
+        $log->error("Błąd automatyzacji: " . $e->getMessage());
+    }
 
     $trash = $store->deleteBy([ "createdAt", "BETWEEN", [ $time_window->getTimestamp(), $actual_time->getTimestamp() ] ], Query::DELETE_RETURN_RESULTS);
     $log->info("DELETED: " . json_encode($trash));
