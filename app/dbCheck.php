@@ -59,7 +59,7 @@ if((count($completed) >= intval($_ENV['CHECK_COUNTER'])) && (count(array_filter(
     try {
         file_get_contents($_ENV['AUTOMATION_PLATFORM']);
     } catch (Exception $e) {
-        $log->error("Błąd automatyzacji: " . $e->getMessage());
+        $log->error("Automation platform error: " . $e->getMessage());
     }
 
     $trash = $store->deleteBy([ "createdAt", "BETWEEN", [ $time_window->getTimestamp(), $actual_time->getTimestamp() ] ], Query::DELETE_RETURN_RESULTS);
